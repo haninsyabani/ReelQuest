@@ -1,0 +1,262 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #222;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #f5c518;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f5c518;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    height: 100vh; /* Hero lebih besar */
+    display: flex;
+    align-items: center;
+    padding: 4rem;
+    position: relative;
+    background: url('image/hero.jpg') no-repeat center center/cover;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Overlay agar teks tetap terbaca */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: left; /* Rata kiri */
+    color: white;
+    max-width: 50%;
+}
+
+.hero h1 {
+    font-size: 7.5rem; /* Ukuran super besar */
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.8rem; /* Perbesar teks deskripsi */
+    line-height: 1.5;
+}
+
+
+
+/* Genre Section */
+.genre {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.genre h2 {
+    font-size: 28px;
+    color: #f5c518;
+    margin-bottom: 20px;
+}
+
+.genre-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.genre-item {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.genre-item h3 {
+    color: #f5c518;
+    margin-bottom: 15px;
+}
+
+.film {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.film img {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Film Terbaru */
+.film-terbaru {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.film-terbaru h2 {
+    font-size: 28px;
+    color: #f5c518;
+    margin-bottom: 20px;
+}
+
+.film-item {
+    display: flex;
+    align-items: center;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.film-item img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.film-desc h3 {
+    color: #f5c518;
+    font-size: 22px;
+}
+
+.film-desc p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Top 5 Film */
+.top-film {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.top-film h2 {
+    font-size: 28px;
+    color: #f5c518;
+    margin-bottom: 20px;
+}
+
+.top-film ol {
+    list-style: none;
+    counter-reset: ranking;
+}
+
+.top-film li {
+    font-size: 18px;
+    background: #222;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    counter-increment: ranking;
+    text-align: left;
+}
+
+.top-film li::before {
+    content: counter(ranking) ". ";
+    font-weight: bold;
+    color: #f5c518;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background: #222;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.footer p {
+    font-size: 14px;
+    color: #bbb;
+}
+
+.social-media a {
+    color: #f5c518;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.social-media a:hover {
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero img {
+        height: 250px;
+    }
+
+    .genre-list {
+        grid-template-columns: 1fr;
+    }
+
+    .film-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .film-item img {
+        margin-bottom: 10px;
+    }
+}
